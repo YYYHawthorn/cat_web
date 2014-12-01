@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+<title>C3</title>
+ <meta charset=utf-8 http-equiv="refresh" content="10; url=C1.html"/>
+
+ <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+ <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+
+
+<style type="text/css"> 
+	
+    body  {
+        background-image: url("blacktg.jpg");
+        background-color: #f6f6f6;
+        background-size: 60%;
+        background-attachment: fixed;
+        background-position: left bottom;
+        background-repeat: no-repeat;
+
+    }
+
+    .notice{
+    	position: absolute;
+    	width: 500px;
+    	bottom: 150px;
+    	right: 15px;
+    	padding: 10px;
+    }
+    .count{
+    	position: fixed; 
+    	/*width: 500px;*/
+    	top: 200px; 
+    	right: 15px;
+    	color: black;	    	
+    	font-size: 1.5em;
+    	font-weight: bold;
+    	text-align: right;
+    	padding: 10px;
+    }
+
+</style>
+</head>
+
+
+<body>
+<div> 
+	
+</div>
+
+<div class="count">
+	<p class="notice">While you are watching cat videos, big cats are dying. Learn their situation to get free sticker!</p>
+	
+	<p>Continue to watch the XX seconds big cat video?</p>
+    <p id="countdown" class="bottom">test</p>
+</div>
+
+
+
+
+<script type="text/javascript">
+	
+    window.onload=function() {
+        //redirect to next page when press enter key
+        document.addEventListener("keydown", function(e) {
+          if (e.keyCode == 13) { 
+            window.location = "C4.html";
+          };
+        }, false);
+    }
+
+    //countdown
+	var countButton = document.getElementById("countdown");
+	var counter = 5;
+	var newElement = document.createElement("p");
+	newElement.innerHTML = "Press YES in 5 seconds";
+	var id;
+
+	countButton.parentNode.replaceChild(newElement, countButton);
+
+	id = setInterval(function() {
+	    counter--;
+	    if(counter < 0) {
+	        newElement.parentNode.replaceChild(countButton, newElement);
+	        clearInterval(id);
+	    } else {
+	        newElement.innerHTML = "Press YES in " + counter.toString() + " seconds";
+	    }
+	}, 1000);
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

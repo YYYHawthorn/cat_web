@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+<title>C5</title>
+ <meta charset=utf-8 http-equiv="refresh" />
+
+ <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+ <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+
+
+<style type="text/css"> 
+    
+    body  {
+        background-image: url("cs11.jpg");
+        background-color: #cccccc;          
+        background-attachment: fixed;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    #block{
+       position: relative;
+       margin-top: 180px;
+       margin-left: 50% ;
+       /*width:400px;  */
+       background: rgba(255, 255, 255, 0.5);
+       padding-top: 50px;
+       padding-bottom: 50px;                                                        
+    }
+    
+    #title{
+        font-size: 3.8em;
+        font-weight: bold;
+        text-align: center;
+    }
+    #subtitle{
+        font-size: 3em; 
+        text-align: center;  
+    }
+
+
+</style>
+</head>
+
+
+<body>
+
+
+<div id="block">
+    <h1 id="title">THANK YOU!</h1>
+        <p id="subtitle">Check out Big Cat Rescue!</p>
+
+        <p id="subtitle">Sticker printing...</p>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+    window.onload=function() {
+        //redirect to next page when press enter key
+        document.addEventListener("keydown", function(e) {
+          if (e.keyCode == 13) { 
+            window.location = "C1.html";
+          };
+        }, false);
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>
