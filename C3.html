@@ -52,8 +52,8 @@
 <div class="count">
 	<p class="notice">While you are watching cat videos, big cats are dying. Learn their situation to get free sticker!</p>
 	
-	<p>Continue to watch the XX seconds big cat video?</p>
-    <p id="countdown" class="bottom">test</p>
+	<p>Continue to watch another big cat video?</p>
+    <p id="countdown" class="bottom">Home</p>
 </div>
 
 
@@ -72,9 +72,9 @@
 
     //countdown
 	var countButton = document.getElementById("countdown");
-	var counter = 5;
+	var counter = 10;
 	var newElement = document.createElement("p");
-	newElement.innerHTML = "Press YES in 5 seconds";
+	newElement.innerHTML = "Press YES in 10 seconds";
 	var id;
 
 	countButton.parentNode.replaceChild(newElement, countButton);
