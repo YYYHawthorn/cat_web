@@ -4,10 +4,33 @@
 <head >
  
 <title>Cat1</title>
+
  <meta charset=utf-8 />
 
  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
  <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script>
+<!--
+$('div.ui-page').live("swipeleft", function(){
+var nextpage = $(this).next('div[data-role="page"]');
+if (nextpage.length > 0) {
+$.mobile.changePage(nextpage, "slide", false, true);
+}
+});
+$('div.ui-page').live("swiperight", function(){
+var prevpage = $(this).prev('div[data-role="page"]');
+if (prevpage.length > 0) {
+$.mobile.changePage(prevpage, {transition: "slide",
+reverse: true}, true, true);
+}
+});
+// -->
+</script>
 
 
 <style type="text/css">
@@ -27,6 +50,8 @@
        font-family: chalkduster;
     }
 
+
+
 </style>
 
 
@@ -38,11 +63,8 @@
 </div>-->
 
 
+
 <script type="text/javascript">
-
-
-
-
 
 
   
