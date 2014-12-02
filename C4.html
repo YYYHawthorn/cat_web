@@ -33,7 +33,7 @@
       //    after the API code downloads.
       var player;
 
-      var randomnumber = Math.floor(Math.random() * 11) ;
+      var randomnumber = Math.floor(Math.random() * 6) ;
 
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player'
@@ -41,8 +41,9 @@
           height: '800px',
           width: '100%',
           playerVars:{listType: 'playlist',
-                    list:'PLW1bZqF7FVSN7CTUpgwHoY2lZIkRUc0Kh',
+                    list:'PLivjPDlt6ApSUGHAy0NissbNxyUXNHNIM',
                     controls:1,
+                    autoplay:1,
                     index:randomnumber,
                     rel: 0,
                     // suggestedQuality:'hd720'
