@@ -13,9 +13,9 @@
 <style type="text/css"> 
 	
     body  {
-        background-image: url("blacktg.jpg");
+        background-image: url("C3Back.png");
         background-color: #f6f6f6;
-        background-size: 60%;
+        background-size: 100%;
         background-attachment: fixed;
         background-position: left bottom;
         background-repeat: no-repeat;
@@ -24,20 +24,20 @@
 
     .notice{
     	position: absolute;
-    	width: 500px;
+    	width: 800px;
     	bottom: 150px;
-    	right: 15px;
+    	/*left: 15px;*/
     	padding: 10px;
     }
     .count{
     	position: fixed; 
     	/*width: 500px;*/
-    	top: 200px; 
-    	right: 15px;
+    	top: 150px; 
+    	left: 15px;
     	color: black;	    	
     	font-size: 1.5em;
     	font-weight: bold;
-    	text-align: right;
+    	text-align: left;
     	padding: 10px;
     }
 
@@ -46,16 +46,24 @@
 
 
 <body>
-<div id="click"><a href="C4.html"><button type="button" class="btn btn-warning btn-lg" id="start"> SKIP </button></a></div>
 
 
 <div class="count">
-	<p class="notice">While you are watching cat videos, big cats are dying. Learn their situation to get free sticker!</p>
+
+    <ul style="list-style-type:none" class="notice">
+     <li>While you are watching kitty cat videos, big cats are dying...</li>
+     <li>Learn about their situation and get free sticker!</li>
+    </ul> 
+	
+<!--     <p class="notice">While you are watching kitty cat videos, big cats are dying...</p>
+    <p class="notice">Learn about their situation and get free sticker!</p> -->
 	
 	<p>Continue to watch another big cat video?</p>
-    <p id="countdown" class="bottom">Home</p>
+    <p id="countdown" class="bottom">Back to Home</p>
 </div>
 
+
+<div id="click"><a href="C4.html"><button type="button" class="btn btn-warning btn-lg" id="start"> SKIP </button></a></div>
 
 
 
