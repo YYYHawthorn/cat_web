@@ -3,43 +3,58 @@
 
 <head>
  
-<title>C3</title>
- <meta charset=utf-8 http-equiv="refresh" content="10; url=C1.html"/>
+<title>c3</title>
+ <!-- <meta charset=utf-8 http-equiv="refresh" content="10; url=C1.html"/> -->
 
  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
  <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+  <link type="text/css" rel="stylesheet" href="style.css"/>
+ <script src="js/jquery.min.js"></script>
+
 
 
 <style type="text/css"> 
 	
     body  {
-        background-image: url("C3back.png");
-        background-color: #f6f6f6;
-        background-size: 100%;
+        background-color:#F5A623;
+
+        background-image: url("pics/long.png");
+        background-size: 40%;
         background-attachment: fixed;
-        background-position: left bottom;
+        background-position: top right;
         background-repeat: no-repeat;
 
     }
-
-    .notice{
-    	position: absolute;
-    	width: 800px;
-    	bottom: 150px;
-    	/*left: 15px;*/
-    	padding: 10px;
+    .textbox{
+        position: relative; 
+        width: 60%;
+        padding: 20px;
+        color: black;
     }
-    .count{
-    	position: fixed; 
-    	/*width: 500px;*/
-    	top: 150px; 
-    	left: 15px;
+    #count{    	
     	color: black;	    	
     	font-size: 1.5em;
-    	font-weight: bold;
     	text-align: left;
-    	padding: 10px;
+        padding-top: 30px;
     }
+      .next{
+        /*z-index: 2;*/
+        position: relative;
+        left: 20%;
+        top: 600px;
+        font-size: 2em;
+      }
+      
+      #question{
+        display: block;
+      }
+      #atext{
+        display: none;
+      }
+      #aimg{
+        width: 60%;
+        display: none;
+      }
 
 </style>
 </head>
@@ -47,35 +62,50 @@
 
 <body>
 
+    <div class="textbox">
+        <h1>You Have Just Watched:</h1>
+            <ul id="count"></ul>
+    </div>
 
-<div class="count">
-
-    <!-- <ul style="list-style-type:none" class="notice">
-     <li>While you are watching kitty cat videos, big cats are dying...</li>
-     <li>Learn about their situation and get free sticker!</li>
-    </ul>  -->
-	
-<!--     <p class="notice">While you are watching kitty cat videos, big cats are dying...</p>
-    <p class="notice">Learn about their situation and get free sticker!</p> -->
-	
-<!-- 	<p>Continue to watch another big cat video?</p>
-    <p id="countdown" class="bottom">Back to Home</p> -->
-</div>
-
-
-<div id="click"><a href="C4.html"><button type="button" class="btn btn-warning btn-lg" id="start"> SKIP </button></a></div>
-
+    <div class="textbox">
+        <h2 id="question">What you have missed: <button  type="button" class="btn btn-info" onclick="answer()">?</button>
+</h2>
+        
+        <h2 id="atext">What you have missed:  <a href="c4.html" class="btn btn-danger btn-lg" id="start">ENDANGERED BIG CATS</a></h2>
+        <img src="pics/simba.png" id="aimg">
+    </div>
 
 
 <script type="text/javascript">
-	
+	function answer(){
+        var q = document.getElementById("question");
+        q.style.display = "none";
+        var at = document.getElementById("atext");
+        at.style.display = "block";
+        var ai = document.getElementById("aimg");
+        ai.style.display = "block";
+    }
+
     window.onload=function() {
         //redirect to next page when press enter key
         document.addEventListener("keydown", function(e) {
           if (e.keyCode == 13) { 
-            window.location = "C4.html";
+            window.location = "c4.html";
           };
         }, false);
+        
+        loadVideoInfo();
+    }
+
+    function loadVideoInfo(){
+      var info = JSON.parse(localStorage.getItem("videoInfo"));
+      console.log(info);
+      for( var i in info){
+        var each = info[i];
+        $('#count').append('<li>'+'Name: '+each.title+'</li>');
+        $('#count').append('<li>'+'Views: '+'<b>'+each.view+'</b>'+'</li>'+ '</br>');
+      }
+      return info;
     }
 
     //countdown
@@ -85,9 +115,9 @@
 	newElement.innerHTML = "Press YES in 10 seconds";
 	var id;
 
-	countButton.parentNode.replaceChild(newElement, countButton);
+  //countButton.parentNode.replaceChild(newElement, countButton);
 
-	id = setInterval(function() {
+/*  id = setInterval(function() {
 	    counter--;
 	    if(counter < 0) {
 	        newElement.parentNode.replaceChild(countButton, newElement);
@@ -95,11 +125,10 @@
 	    } else {
 	        newElement.innerHTML = "Press YES in " + counter.toString() + " seconds";
 	    }
-	}, 1000);
+	}, 1000000);
+ */
 
-
-
-
+    
 
 </script>
 

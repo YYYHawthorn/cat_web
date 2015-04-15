@@ -1,0 +1,45 @@
+
+#Boma{
+	position: absolute;
+	left: 326px;
+	top: -5px ;
+}
+
+#African{
+	position: absolute;
+	left: 800px;
+	top: 160px ;
+}
+#Tiger{
+	position: absolute;
+	left: 0;
+	top: 450px ;
+	/*z-index: 1;*/
+}
+#tigerContent{
+	z-index: 2;
+	position: relative;
+	left: -280px;
+	top: -220px;
+}
+#Flashlight
+{
+	position: absolute;
+	left: -18px;
+	top: 130px ;
+}
+#tigerContent{
+	z-index: 2;
+	position: relative;
+	left: -100px;
+	top: -130px;
+}
+#House{	position: absolute;
+	left: 1190px;
+	top: -11px ;
+}
+#Cat{
+	position: absolute;
+	left: 1166.3px;
+	top: 0 ;
+}

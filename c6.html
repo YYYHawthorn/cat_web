@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+<title>c6</title>
+ <meta charset=utf-8 http-equiv="refresh" />
+
+ <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+ <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+ <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+<style type="text/css"> 
+    
+    body  {
+        background-color: #F5A623; 
+    }
+
+    .rightarea{
+       /*width:70%; */
+       position: relative;
+       margin: 0 auto;
+       top: 200px;
+       /*background: rgba(255, 255, 255, 0.2);*/
+       padding-top: 20px;
+       padding-bottom: 20px;                                                        
+    }
+    
+    #title{
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+    }
+    #subtitle{
+        font-size: 30px; 
+        text-align: center;  
+    }
+
+.sharing-buttons{
+  list-style: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+.sharing-buttons li{
+  /*display: inline;*/
+  box-sizing: border-box;
+  font-family: sans-serif;
+  padding: 10px;
+}
+
+.sharing-buttons a{
+  /*border: 1px solid;*/
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px #888888;
+  padding: 0.5em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.sharing-buttons a:hover{
+  color: #eee;
+  text-decoration: none;
+}
+
+.fa{
+  padding: 0.5em;
+}
+
+.facebook{
+  background: #3B5998; 
+}
+
+.twitter{
+  background: #00ACED;
+}
+
+.google-plus{
+  background: #D14836
+}
+
+
+</style>
+</head>
+
+
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    
+    <div class="row">
+        <div class="col-md-6" >
+          <img src="pics/k.gif" class="img-responsive center-block">
+        </div>
+
+        <div class="col-md-6 rightarea">
+                <h1 id="title">@HelpBigCatsPurr</h1>
+                <ul class="sharing-buttons">
+                  <li>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F104.236.239.239%3A3000%2Fhbcp%2Fc1.html" target="_blank"><i class="fa fa-facebook-square"></i>Share on Facebook </a>
+                  </li>
+                  <li>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2F104.236.239.239%3A3000%2Fhbcp%2Fc2.html&text=Enjoy some random cat videos!&via=helpbigcatspurr" target="_blank"><i class="fa fa-twitter-square"></i>Tweet </a>
+                  </li>
+                  <li>
+                    <a class="google-plus" href="https://plus.google.com/share?url=http%3A%2F%2F104.236.239.239%3A3000%2Fhbcp%2Fc2.html" target="_blank"><i class="fa fa-google-plus-square"></i>Share on Google+ </a>
+                  </li>
+                </ul>
+                <!-- <div class="center-block"><a href="c1.html" class="btn btn-warning" id="home">Back to Homepage</a></div>  -->          
+        </div>
+    </div>
+
+
+
+
+
+
+<script type="text/javascript">
+	
+    window.onload=function() {
+        //redirect to next page when press enter key
+        document.addEventListener("keydown", function(e) {
+          if (e.keyCode == 13) { 
+            window.location = "c1.html";
+          };
+        }, false);
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>
