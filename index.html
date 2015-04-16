@@ -21,7 +21,7 @@
   <div class="row">
     <div class="col-md-7">
       <div class="catbody">
-        <img src="pics/paw.gif"  id="playNext" class="img-responsive" alt="Responsive image" >
+        <a href="#"><img src="pics/paw.gif"  id="playNext" class="img-responsive" alt="Responsive image" ></a>
         <div  class="embed-responsive embed-responsive-4by3 playerdiv">
           <div id="player"></div>
         </div>
@@ -29,8 +29,9 @@
     </div>
  
  <!-- page RIGHT part -->
-    <div class="col-md-5 wordbox">
+    <div class="col-md-5">
       <p class="title">HELP BIG CATS PURR</p>
+      <p>Click on PAW to change video</p>
       <!-- tab -->
       <ul class="nav nav-tabs nav-justified" role="tablist" id="myTab">
         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Info</a></li>
@@ -38,15 +39,20 @@
       </ul>
       <!-- tab content -->
       <div class="tab-content wrap">
-          <div role="tabpanel" class="tab-pane fade in active tabContent content" id="home">
-            <p>Click on Paw to change video</p>
-            <div id="count"></div>
+          <div role="tabpanel" class="tab-pane fade in active tabContent content" id="home">    <div id="count"></div>
           </div>
 
-          <div role="tabpanel" class="tab-pane fade tabContent" id="profile">
-            <p>Endangered Big Cats</p>
-            <h3>2222222asdadsga</h3>
-            <div id="card"></div>
+          <div role="tabpanel" class="tab-pane fade tabContent content" id="profile">
+            <h3>They are endangered!</h3>
+            <div id="cardboard">
+              <!-- ihover -->
+              <div class="ih-item square effect6 from_top_and_bottom" id="tiger"><a href="http://discover.iucnredlist.org/view/15955">
+                <div class="img"><img src="pics/tiger.jpg" alt="img"></div>
+                  <div class="info">
+                  <h3>Tiger</h3>
+                  <p>Population estimates: approximately 3,000</br>Tiger range appears to have declined by over 50% over the last three generations (21–27 years)</p>
+                </div></a></div>
+            </div>
           </div>
       </div>
      </div>
@@ -169,8 +175,8 @@
 
     //*************************** OUTPUT of video info ***************************
       var bigcat={ 
-        dvxT9evZA9Y: 'tiger.jpg', 
-        TLZnDZcgtPY: 'cat.png'
+        dvxT9evZA9Y: 'tiger', 
+        rq5V9gl5jZw: 'lion'
       }
       
       function loadVideoInfo(){
@@ -179,12 +185,13 @@
 
           if (videoId in bigcat) {
             //append to first tab
+            var card = bigcat[videoId];
             console.log(bigcat[videoId]);
-            $('#count').prepend('</br><p class="notice">********** Found Rare Species *********</h3>');
-            $('#count').prepend('<div class="infograph"><img src="pics/' + bigcat[videoId] + '"></div>');
+            $('#count').prepend('<h3 class="infograph">' + card +'</h3>' + '<p class="notice">********** Found Rare Species *********</p>');
+            $('#count').prepend('<div class="infograph"><img src="pics/' + card + '.jpg"></div>');
             $('#count').prepend('<p class="notice">********** Found Rare Species *********</p>');
             //append to second tab
-            $('#card').prepend('<div class="cardgraph"><img src="pics/' + bigcat[videoId] + '"></div>');
+            document.getElementById(card).style.display = 'block';
           }
           else {
             // console.log(videoInfo);
