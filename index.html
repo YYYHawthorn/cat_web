@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head >
+  <title>HelpBigCatsPurr</title>
+  <meta charset=utf-8 />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <!-- javascript order: JQuery, Bootstrap, my js -->
+  <script src="js/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.3/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reqwest/1.1.5/reqwest.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+  <link href="css/ihover.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+</head>
+
+<body>
+  <!-- page LEFT part -->
+  <div class="row">
+    <div class="col-md-7">
+      <div class="catbody">
+        <img src="pics/paw.gif"  id="playNext" class="img-responsive" alt="Responsive image" >
+        <div  class="embed-responsive embed-responsive-4by3 playerdiv">
+          <div id="player"></div>
+        </div>
+      </div>
+    </div>
+ 
+ <!-- page RIGHT part -->
+    <div class="col-md-5 wordbox">
+      <p class="title">HELP BIG CATS PURR</p>
+      <!-- tab -->
+      <ul class="nav nav-tabs nav-justified" role="tablist" id="myTab">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Info</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Chest</a></li>
+      </ul>
+      <!-- tab content -->
+      <div class="tab-content wrap">
+          <div role="tabpanel" class="tab-pane fade in active tabContent content" id="home">
+            <p>Click on Paw to change video</p>
+            <div id="count"></div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane fade tabContent" id="profile">
+            <p>Endangered Big Cats</p>
+            <h3>2222222asdadsga</h3>
+            <div id="card"></div>
+          </div>
+      </div>
+     </div>
+
+
+  </div>
+
+
+
+  <script type="text/javascript">
+
+    //*************************** Youtube Initial *****************************//
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      //randomize playlist
+      var randomnumber = Math.floor(Math.random() * 11) ;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player'
+          , {
+            // height: '300px',
+            // width: '400px',
+            playerVars:{listType: 'playlist',
+            list:'PLW1bZqF7FVSN31ILibwTRdYinMq4mx8Vp',
+            controls:1,
+            autoplay:1,
+            index:randomnumber,
+            rel: 0,
+                    // suggestedQuality:'hd720'
+                  },
+                  events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                  }
+                });        
+      }
+
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+        saveVideoInfo();
+
+        var playNextBtn = document.getElementById('playNext'); 
+        playNextBtn.onclick= function(){
+         player.nextVideo();
+       }
+     }
+
+      // 5. The API calls this function when the player's state changes.
+      function onPlayerStateChange(event) {
+        //when a video ends(state=0), redirect to next page. Otherwise play next automatically
+        if (event.data == YT.PlayerState.ENDED) {
+          // redirect to C3
+          // window.location = "c3.html";
+        }
+
+        //save video info before it starts
+        else if ( event.data == YT.PlayerState.UNSTARTED){
+          saveVideoInfo();        
+        }
+      }
+      
+      function stopVideo() {
+        player.stopVideo();
+      }
+      
+    //*********************** IMPORTANT part to get video info **********************
+      var videoInfo = [];
+      var videoId;
+      function saveVideoInfo() {
+        var videoUrl = player.getVideoUrl();
+        videoId = getParameterByKey(videoUrl, 'v');
+        // console.log('video id: '+videoId);
+
+        addVideoData(videoId);
+      }
+
+
+      // parse the url to get the id of a video
+      function getParameterByKey(url, name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec('?'+url.split('?')[1]);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      //get the title and view number of this video using Google API, and add them to the variable videoInfo
+      function addVideoData(urlId){
+
+        var key = 'AIzaSyDPUqAa8ZkqTuiYshHqI5L9BjX1WVOuQvk';
+        var url = 'https://www.googleapis.com/youtube/v3/videos?id='+urlId+'&key='+key+'&fields=items(id,snippet(channelId,title,categoryId),statistics)&part=snippet,statistics';
+
+        reqwest({
+         url: url
+         , type: 'json'
+         , crossOrigin: true
+         , success: function(data){
+          var title = data.items[0].snippet.title;
+          var view = data.items[0].statistics.viewCount;
+          videoInfo.push({title:title, view:view});
+          // console.log(videoInfo);
+              //save  the data, so you can get it later in c3.html
+              localStorage.setItem("videoInfo", JSON.stringify(videoInfo));
+
+              // console.log(videoInfo);
+              loadVideoInfo();
+
+            }
+          })
+      }
+
+    //*************************** OUTPUT of video info ***************************
+      var bigcat={ 
+        dvxT9evZA9Y: 'tiger.jpg', 
+        TLZnDZcgtPY: 'cat.png'
+      }
+      
+      function loadVideoInfo(){
+
+        var info = videoInfo[videoInfo.length-1];
+
+          if (videoId in bigcat) {
+            //append to first tab
+            console.log(bigcat[videoId]);
+            $('#count').prepend('</br><p class="notice">********** Found Rare Species *********</h3>');
+            $('#count').prepend('<div class="infograph"><img src="pics/' + bigcat[videoId] + '"></div>');
+            $('#count').prepend('<p class="notice">********** Found Rare Species *********</p>');
+            //append to second tab
+            $('#card').prepend('<div class="cardgraph"><img src="pics/' + bigcat[videoId] + '"></div>');
+          }
+          else {
+            // console.log(videoInfo);
+            $('#count').prepend($('<p>'+'Views: '+'<b>'+info.view+'</b>'+'</p>'+ '</br>').fadeIn('slow'));
+            $('#count').prepend('<p>'+'Name: '+info.title+'</p>');
+            return info;
+          };
+      }
+
+
+  //************** shortcut to next page: press enter *****************
+    window.onload=function() {
+        //redirect to next page when press enter key
+        document.addEventListener("keydown", function(e) {
+          if (e.keyCode == 13) { 
+            window.location = "c3.html";
+          };
+        }, false);
+      }
+    </script>
+
+
+  </body>
+  </html>
