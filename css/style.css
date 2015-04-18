@@ -1,40 +1,36 @@
 html, body {
     height:100%;
     width:100%;
-    padding-right: 25px;
+    padding: 10px;
     margin:0;
     /*overflow:hidden;*/
     background-color:#B8E986;
 }
 /********* Home Page **********/
+.gridBlock{
+  position: relative; 
+}
+
 /*LEFT*/
-.catbody{
-	/*padding-top: 20px;
-	z-index:1;*/
-	/*position: relative;*/
-	background: url(../pics/body.png) no-repeat 0 100%;
-	background-size:100% auto;
-	padding-top: 250px;
+#catbody{
+  z-index:-1;
 }
 .playerdiv{
-	/*width: 50%;
-	margin:0 auto;*/
-	top: -500px;
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  z-index:2;
 }
 #player {
-	/*position: absolute;*/
-	left: 15%;
-	margin:0 auto;
-	/*top: -500px;*/
-	width: 70%;
-	height: 70%;
-	z-index: 2;
+	padding: 16%;
+	padding-top: 8%;
 }
 #playNext {
-	position: relative;
-	/*top: -860px;*/
-	left: 80%;
-	z-index:3;
+  position: absolute;
+  top: 20%;
+  right: -6%;
+  width: 26%;
+  z-index:3;
 }
 
 /*RIGHT*/
@@ -78,28 +74,24 @@ html, body {
 }
 
 
-#tiger{
-	display: none;
-}
+#tiger{display: none;}
+#lion{display: none;}
 
-
-
-
-.infograph{/*click to show modal and pause*/}
 
 .cardgraph{
-/* square, hover for detail. dash-decorate uncollected cards*/
-/* pre arrange, when triggered, change "display: none" to "block"*/
+	width: 80%;
 }
 
-
+.caption{/*click to show modal and pause*/}
+/* square, hover for detail. dash-decorate uncollected cards*/
+/* pre arrange, when triggered, change "display: none" to "block"*/
 
 
 
 /********* RESULTS **********/
 
 /********* SOLUTION PAGE **********/
-#Boma{
+/*#Boma{
 	position: absolute;
 	left: 326px;
 	top: -5px ;
@@ -114,7 +106,6 @@ html, body {
 	position: absolute;
 	left: 0;
 	top: 450px ;
-	/*z-index: 1;*/
 }
 #tigerContent{
 	z-index: 2;
@@ -142,4 +133,4 @@ html, body {
 	position: absolute;
 	left: 1166.3px;
 	top: 0 ;
-}
+}*/

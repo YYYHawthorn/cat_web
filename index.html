@@ -17,48 +17,68 @@
 </head>
 
 <body>
-  <!-- page LEFT part -->
-  <div class="row">
-    <div class="col-md-7">
-      <div class="catbody">
-        <a href="#"><img src="pics/paw.gif"  id="playNext" class="img-responsive" alt="Responsive image" ></a>
-        <div  class="embed-responsive embed-responsive-4by3 playerdiv">
-          <div id="player"></div>
+  <div class="container-fluid">
+    <div class="row">
+  <!-- page LEFT part -->  
+      <div class="col-md-7">
+        <div class="gridBlock">
+          <div id="catbody"><img src="pics/body.png" class="img-responsive center-block" alt="Responsive image" ></div>
+          <a href="#"><img src="pics/paw.gif"  id="playNext" class="img-responsive" alt="Responsive image" ></a>
+          <div  class="embed-responsive center-block embed-responsive-4by3 playerdiv">
+            <div id="player"></div>
+          </div>
         </div>
-      </div>
-    </div>
- 
+      </div> <!-- left col ends -->
+   
  <!-- page RIGHT part -->
     <div class="col-md-5">
-      <p class="title">HELP BIG CATS PURR</p>
-      <p>Click on PAW to change video</p>
+      <div class="gridBlock">
+        <p class="title">HELP BIG CATS PURR</p>
+        <p>Click on PAW to change video</p>
+        
       <!-- tab -->
-      <ul class="nav nav-tabs nav-justified" role="tablist" id="myTab">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Info</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Chest</a></li>
-      </ul>
-      <!-- tab content -->
-      <div class="tab-content wrap">
-          <div role="tabpanel" class="tab-pane fade in active tabContent content" id="home">    <div id="count"></div>
-          </div>
-
-          <div role="tabpanel" class="tab-pane fade tabContent content" id="profile">
-            <h3>They are endangered!</h3>
-            <div id="cardboard">
-              <!-- ihover -->
-              <div class="ih-item square effect6 from_top_and_bottom" id="tiger"><a href="http://discover.iucnredlist.org/view/15955">
-                <div class="img"><img src="pics/tiger.jpg" alt="img"></div>
-                  <div class="info">
-                  <h3>Tiger</h3>
-                  <p>Population estimates: approximately 3,000</br>Tiger range appears to have declined by over 50% over the last three generations (21–27 years)</p>
-                </div></a></div>
+        <ul class="nav nav-tabs" role="tablist" id="myTab">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">   Info   </a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">   Chest   </a></li>
+        </ul>
+        
+      <!-- tab panel -->
+        <div class="tab-content wrap">
+          <!-- panel 1 -->
+            <div role="tabpanel" class="tab-pane fade in active tabContent content" id="home">
+              <div id="count"></div>
             </div>
-          </div>
+          <!-- panel 2 -->
+            <div role="tabpanel" class="tab-pane fade tabContent content" id="profile">
+              <h3>They are endangered!</h3>
+              <div id="cardboard">
+              <!-- ihover -->
+                <!-- tiger -->
+                <div class="ih-item square effect6 from_top_and_bottom" id="tiger"><a href="http://discover.iucnredlist.org/view/15955">
+                  <div class="img"><img src="pics/tiger.jpg" alt="img"></div>
+                  <div class="info">
+                    <h3>Tiger</h3>
+                    <p>Population estimates: approximately 3,000</br>Tiger range appears to have declined by over 50% over the last 21–27 years</p>
+                  </div></a>
+                </div>
+                <!-- lion -->
+                <div class="ih-item square effect6 from_top_and_bottom" id="lion"><a href="http://discover.iucnredlist.org/view/15955">
+                  <div class="img"><img src="pics/lion.jpg" alt="img"></div>
+                  <div class="info">
+                    <h3>Lion</h3>
+                    <p>Population estimates: approximately 3,000</br>Tiger range appears to have declined by over 50% over the last 21–27 years</p>
+                  </div></a>
+                </div>
+
+              </div>
+            </div>
+        </div>
       </div>
-     </div>
+    </div> <!-- right col ends -->
 
 
-  </div>
+    </div><!-- row ends -->
+  </div> <!-- container ends -->
 
 
 
@@ -187,9 +207,9 @@
             //append to first tab
             var card = bigcat[videoId];
             console.log(bigcat[videoId]);
-            $('#count').prepend('<h3 class="infograph">' + card +'</h3>' + '<p class="notice">********** Found Rare Species *********</p>');
-            $('#count').prepend('<div class="infograph"><img src="pics/' + card + '.jpg"></div>');
-            $('#count').prepend('<p class="notice">********** Found Rare Species *********</p>');
+            $('#count').prepend('<h3 class="caption">' + card +'</h3>' +'<p class="notice">********** Found Rare Cat Species *********</p>');
+            $('#count').prepend('<div class="cardgraph"><img src="pics/' + card + '.jpg"></div>');
+            $('#count').prepend('<p class="notice">********** Found Rare Cat Species *********</p>');
             //append to second tab
             document.getElementById(card).style.display = 'block';
           }
