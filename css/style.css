@@ -2,8 +2,6 @@ html, body {
     height:100%;
     width:100%;
     padding: 10px;
-    margin:0;
-    /*overflow:hidden;*/
     background-color:#B8E986;
 }
 /********* Home Page **********/
@@ -37,46 +35,90 @@ html, body {
 .title{
 	/* HELP BIG CATS PURR: */
 	font-family: AvenirNext-Bold;
-	font-size: 48px;
+	font-size: 46px;
 	color: #323232;
 	line-height: 79px;
 	position: relative;
-	top: 20px;
-}
-#count{
-	font-size: 16px;
-	color: #4A4A4A;
-	padding: 10px;
-}
-.tabContent{
-	/* Rectangle 30: */
-	opacity: 0.8;
-	background: #9FDC62;
-	/*border: 1px solid #FFFFFF;*/
-	/*border-radius: 5px;*/
+	top: 10px;
 }
 
+#tab1{
+	background-color: #8BC451;
+	border:  2px solid #6B6B6B 0.3;
+	border-radius: 10px 10px 0 0;
+	border-bottom-color: transparent;
+	margin-bottom: -2px;
+}
+#tab2{
+	background-color: #4A90E2;
+	border:  2px solid #6B6B6B 0.3;
+	border-radius: 10px 10px 0 0;
+	border-bottom-color: transparent;
+	margin-bottom: -2px;
+}
+.tabContent1{
+	opacity: 0.6;
+	background: #8BC451;
+	border:  2px solid #6B6B6B 0.3;
+}
+.tabContent2{
+	opacity: 0.6;
+	background: #4A90E2;
+	border:  2px solid #6B6B6B 0.3;
+}
+
+/*scroll bar*/
 .wrap { 
     overflow-y:auto;
-    /*overflow: auto;*/
     height: 600px;
-    padding: 5 5px;
 }
-
+/*content style*/
 .content{   
     padding:15px;
     min-height:100%;
 }
-
-.notice{
-	/* rare spicies notice */
-	color: blue;
+/* small cat videos counts*/
+#count{
+	font-size: 14px;
+	color: #4A4A4A;
+/*	padding: 10px;*/
+}
+.viewCount{
+	font-size: 26px;
+	/*color: #e74c3c;*/
 }
 
+/* big cats videos notice*/
+.notice{
+	/* rare spicies notice */
+	font-size: 16px;
+	color: blue;
+}
+.bigCatName{
+	font-size: 26px;
+	color: blue;
+}
+.cardBoarder{
+	padding: 5px;
+}
+
+.cardContent{
+	position: absolute; 
+	top: 0;
+  	left: 0;
+  	padding: 5px;
+	z-index: 2;
+}
 
 #tiger{display: none;}
 #lion{display: none;}
-
+#cheetah{display: none;}
+#sleopard{display: none;}
+#cleopard{display: none;}
+#scleopard{display: none;}
+#lynx{display: none;}
+#fishingcat{display: none;}
+#flatheadcat{display: none;}
 
 .cardgraph{
 	width: 80%;
@@ -85,8 +127,6 @@ html, body {
 .caption{/*click to show modal and pause*/}
 /* square, hover for detail. dash-decorate uncollected cards*/
 /* pre arrange, when triggered, change "display: none" to "block"*/
-
-
 
 /********* RESULTS **********/
 

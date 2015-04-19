@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.3/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reqwest/1.1.5/reqwest.min.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script src="js/jquery.glow.js"></script>
   <!-- CSS -->
   <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
   <link href="css/ihover.css" rel="stylesheet">
@@ -23,7 +24,7 @@
       <div class="col-md-7">
         <div class="gridBlock">
           <div id="catbody"><img src="pics/body.png" class="img-responsive center-block" alt="Responsive image" ></div>
-          <a href="#"><img src="pics/paw.gif"  id="playNext" class="img-responsive" alt="Responsive image" ></a>
+          <a href="#"><img src="pics/paw.gif"  id="playNext" class="img-responsive" alt="Responsive image" onmouseover="this.src='pics/pawglow.png';" onmouseout="this.src='pics/paw.gif';"></a>
           <div  class="embed-responsive center-block embed-responsive-4by3 playerdiv">
             <div id="player"></div>
           </div>
@@ -34,43 +35,132 @@
     <div class="col-md-5">
       <div class="gridBlock">
         <p class="title">HELP BIG CATS PURR</p>
-        <p>Click on PAW to change video</p>
+        <p>Collect Rare Cat Species Among Amazing Cat Videos!</p>
         
       <!-- tab -->
-        <ul class="nav nav-tabs" role="tablist" id="myTab">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">   Info   </a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">   Chest   </a></li>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#home" id="tab1" aria-controls="home" role="tab" data-toggle="tab">CATS</a></li>
+          <li role="presentation" ><a href="#profile" id="tab2" aria-controls="profile" role="tab" data-toggle="tab">CHEST</a></li>
         </ul>
         
       <!-- tab panel -->
         <div class="tab-content wrap">
           <!-- panel 1 -->
-            <div role="tabpanel" class="tab-pane fade in active tabContent content" id="home">
+            <div role="tabpanel" class="tab-pane fade in active tabContent1 content" id="home">
               <div id="count"></div>
             </div>
           <!-- panel 2 -->
-            <div role="tabpanel" class="tab-pane fade tabContent content" id="profile">
-              <h3>They are endangered!</h3>
-              <div id="cardboard">
-              <!-- ihover -->
+            <div role="tabpanel" class="tab-pane fade tabContent2 content" id="profile">
+              
+              <div>
+              <h4>You have collected these endangered big cats:</h4>
+              <!-- cards -->
                 <!-- tiger -->
-                <div class="ih-item square effect6 from_top_and_bottom" id="tiger"><a href="http://discover.iucnredlist.org/view/15955">
-                  <div class="img"><img src="pics/tiger.jpg" alt="img"></div>
-                  <div class="info">
-                    <h3>Tiger</h3>
-                    <p>Population estimates: approximately 3,000</br>Tiger range appears to have declined by over 50% over the last 21–27 years</p>
-                  </div></a>
+                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="tiger" class="cardContent">
+                    <div><img src="pics/1.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>ENDANGERED</h3>
+                      <p>Less than 3000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
                 </div>
                 <!-- lion -->
-                <div class="ih-item square effect6 from_top_and_bottom" id="lion"><a href="http://discover.iucnredlist.org/view/15955">
-                  <div class="img"><img src="pics/lion.jpg" alt="img"></div>
-                  <div class="info">
-                    <h3>Lion</h3>
-                    <p>Population estimates: approximately 3,000</br>Tiger range appears to have declined by over 50% over the last 21–27 years</p>
-                  </div></a>
+                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="lion" class="cardContent">
+                    <div><img src="pics/2.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>VULNERABLE</h3>
+                      <p>Less than 32000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                <!-- cheetah -->
+                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="cheetah" class="cardContent">
+                    <div><img src="pics/3.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>VULNERABLE</h3>
+                      <p>9000~12000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- Snow Leopard -->
+                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="sleopard" class="cardContent">
+                    <div><img src="pics/4.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>ENDANGERED</h3>
+                      <p>4086~6590</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- Clouded Leopard -->
+                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="cleopard" class="cardContent">
+                    <div><img src="pics/5.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>VULNERABLE</h3>
+                      <p>Less than 10000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- scleopard -->
+                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="scleopard" class="cardContent">
+                    <div><img src="pics/6.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>VULNERABLE</h3>
+                      <p>Less than 10000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- Iberian Lynx -->
+                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="lynx" class="cardContent">
+                    <div><img src="pics/7.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>CRITICALLY ENDANGERED</h3>
+                      <p>84~143</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- Fishing Cat -->
+                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="fishingcat" class="cardContent">
+                    <div><img src="pics/8.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>ENDANGERED</h3>
+                      <p>Less than 10000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- Flat-headed Cat -->
+                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="flatheadcat" class="cardContent">
+                    <div><img src="pics/9.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>ENDANGERED</h3>
+                      <p>Less than 2500</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
                 </div>
 
-              </div>
+                 <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                      <div><img src="pics/cardframe.png" style="opacity: 0;"></div>
+                      <h3 id="score"></h3>
+                </div>
+              </div><!-- cards end -->
+              <h3 class="text-center">8/10</h3>
             </div>
         </div>
       </div>
@@ -195,27 +285,48 @@
 
     //*************************** OUTPUT of video info ***************************
       var bigcat={ 
-        dvxT9evZA9Y: 'tiger', 
-        rq5V9gl5jZw: 'lion'
+        // dvxT9evZA9Y: 'tiger', 
+        // rq5V9gl5jZw: 'lion',
+
+        XfIl1EibKaM: ['1', 'Tiger','<3,000','tiger'],
+        EDg_yHKrRcA: ['2', 'African Lion ↓','<32,000','lion'],
+        qqH6V4cfUaY: ['3', 'Cheetah','9,000~12,000','cheetah'],
+        EjxvrHDaxKc: ['4', 'Snow Leopard','4,080~6,590','sleopard'],
+        ot8q0OUnUwI: ['5', 'Clouded Leopard','<10,000','cleopard'],
+        ZiLyDbjEkgw: ['6', 'Sunda Clouded Ledopard','<10,000','scleopard'],
+        rv436cpA8vE: ['7', 'Iberian Lynx','84~143','lynx'],
+        IjoycRq3r0c: ['8', 'Fishing Cat','<10,000','fishingcat'],
+        H4Tt796djv4: ['9', 'Flat-headed Cat','<2,500','flatheadcat']
       }
+
       
       function loadVideoInfo(){
 
         var info = videoInfo[videoInfo.length-1];
 
           if (videoId in bigcat) {
+                         
             //append to first tab
             var card = bigcat[videoId];
             console.log(bigcat[videoId]);
-            $('#count').prepend('<h3 class="caption">' + card +'</h3>' +'<p class="notice">********** Found Rare Cat Species *********</p>');
-            $('#count').prepend('<div class="cardgraph"><img src="pics/' + card + '.jpg"></div>');
-            $('#count').prepend('<p class="notice">********** Found Rare Cat Species *********</p>');
+            
+            var imgNum = card[0];
+            var catName = card[1];
+            var population = card[2];
+            var catId = card[3];
+
+            console.log(imgNum);
+            $('#count').prepend('<p class="notice">********** Found Rare Cat Species! *********</p></br>');
+            $('#count').prepend('<p class="bigCatName">' + catName +'</br> Estimate Population: '+population+'</p>');        
+            $('#count').prepend('<div class="cardgraph"><img class="img-responsive" src="pics/' + imgNum + '.png"></div>');
+            $('#count').prepend('<p class="notice">********** Found Rare Cat Species! *********</p>');
             //append to second tab
-            document.getElementById(card).style.display = 'block';
+            document.getElementById(catId).style.display="block";
           }
           else {
-            // console.log(videoInfo);
-            $('#count').prepend($('<p>'+'Views: '+'<b>'+info.view+'</b>'+'</p>'+ '</br>').fadeIn('slow'));
+            var views = Number(info.view).toLocaleString()
+            console.log(views);
+            $('#count').prepend($('<p>'+'View Count:  '+'<b class="viewCount">'+views+'</b>'+'</p>'+ '</br>').fadeIn('slow'));
             $('#count').prepend('<p>'+'Name: '+info.title+'</p>');
             return info;
           };
