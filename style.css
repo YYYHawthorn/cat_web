@@ -5,11 +5,13 @@ html, body {
     background-color:#B8E986;
 }
 /********* Home Page **********/
-.gridBlock{
-  position: relative; 
+a{
+	color:#FFF6F6;
 }
-
 /*LEFT*/
+.gridBlock{
+	position: relative;
+}
 #catbody{
   z-index:-1;
 }
@@ -55,6 +57,7 @@ html, body {
 	border-radius: 10px 10px 0 0;
 	border-bottom-color: transparent;
 	margin-bottom: -2px;
+	color:; 
 }
 .tabContent1{
 	opacity: 0.6;
@@ -120,13 +123,55 @@ html, body {
 #fishingcat{display: none;}
 #flatheadcat{display: none;}
 
-.cardgraph{
-	width: 80%;
+
+/* share */
+
+.sharing-buttons{
+  list-style: none;
+  text-decoration: none;
+  text-align: center;
+  padding:0;
+  padding-top: 20px;
 }
 
-.caption{/*click to show modal and pause*/}
-/* square, hover for detail. dash-decorate uncollected cards*/
-/* pre arrange, when triggered, change "display: none" to "block"*/
+.sharing-buttons li{
+  display: inline;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  padding: 10px;
+}
+
+.sharing-buttons a{
+  /*border: 1px solid;*/
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px #888888;
+  padding: 0.5em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.sharing-buttons a:hover{
+  color: #eee;
+  text-decoration: none;
+}
+
+.fa{
+  padding: 0.5em;
+}
+
+.facebook{
+  background: #3B5998; 
+}
+
+.twitter{
+  background: #00ACED;
+}
+
+.google-plus{
+  background: #D14836
+}
+
+
 
 /********* RESULTS **********/
 
