@@ -21,8 +21,11 @@
             list:'PLW1bZqF7FVSN31ILibwTRdYinMq4mx8Vp',
             controls:1,
             autoplay:1,
+            loop:1,
             index:randomnumber,
+            // showinfo:0,
             rel: 0,
+            modestbranding:1, 
                     // suggestedQuality:'hd720'
                   },
                   events: {
