@@ -14,7 +14,8 @@
   <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
   <link href="css/ihover.css" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="style.css"/>
-
+  <!-- font -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -23,8 +24,11 @@
   <!-- page LEFT part -->  
       <div class="col-md-7">
         <div class="gridBlock">
-          <div id="catbody"><img src="pics/body.png" class="img-responsive center-block" alt="Responsive image" ></div>
-          <a href="#"><img src="pics/paw.gif"  id="playNext" class="img-responsive" alt="Responsive image" onmouseover="this.src='pics/pawglow.png';" onmouseout="this.src='pics/paw.gif';"></a>
+          <div id="catbody"><img src="pics/body.png" class="img-responsive center-block" alt="Responsive image"  ></div>
+          <a href="#"><img src="pics/pawglow.png"  id="playNext" class="img-responsive" alt="Responsive image" onmouseover="this.src='pics/pawglow.png';" onmouseout="this.src='pics/paw.gif';"></a>
+
+<!-- onclick="getElementById('demo').style.src="pics/paw.gif""  -->
+
           <div  class="embed-responsive center-block embed-responsive-4by3 playerdiv">
             <div id="player"></div>
           </div>
@@ -33,29 +37,31 @@
    
  <!-- page RIGHT part -->
     <div class="col-md-5">
-        <p class="title">HELP BIG CATS PURR</p>
-        <p>Collect Rare Cat Species Among Amazing Cat Videos!</p>
+        <!-- <p class="title">HELP BIG CATS PURR</p> -->
+        <div><img src="pics/title.png" class="img-responsive center-block"></div>
+        <p class="subTitile">This is a digital cat video kiosk. </br>Keep watching, you may find rare cat species!</p>
         
       <!-- tab -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#home" id="tab1" aria-controls="home" role="tab" data-toggle="tab">CATS</a></li>
-          <li role="presentation" ><a href="#profile" id="tab2" aria-controls="profile" role="tab" data-toggle="tab">CHEST</a></li>
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">INFOMATION STREAM</a></li>
+          <li role="presentation" ><a href="#profile" id="tab2" aria-controls="profile" role="tab" data-toggle="tab">BIG CATS COLLECTION</a></li>
         </ul>
         
       <!-- tab panel -->
         <div class="tab-content wrap">
           <!-- panel 1 -->
-            <div role="tabpanel" class="tab-pane fade in active tabContent1 content" id="home">
+            <div role="tabpanel" class="tab-pane fade tabContent1 in active content" id="home">
               <div id="count"></div>
             </div>
           <!-- panel 2 -->
             <div role="tabpanel" class="tab-pane fade tabContent2 content" id="profile">
               
               <div>
-              <h4>You have collected these endangered big cats:</h4>
+              <p class="panel2title">Big cats you met will be display here </p>
+              <p id="scoreNum" class="panel2title">0/9</p>
               <!-- cards -->
                 <!-- tiger -->
-                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                   <div><img src="pics/cardframe.png"></div>
                   <a href="#"><div id="tiger" class="cardContent">
                     <div><img src="pics/1.png" class="img" alt="img"></div>
@@ -66,7 +72,7 @@
                   </div>
                 </div>
                 <!-- lion -->
-                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                   <div><img src="pics/cardframe.png"></div>
                   <a href="#"><div id="lion" class="cardContent">
                     <div><img src="pics/2.png" class="img" alt="img"></div>
@@ -77,7 +83,7 @@
                   </div>
                 </div>
                 <!-- cheetah -->
-                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                   <div><img src="pics/cardframe.png"></div>
                   <a href="#"><div id="cheetah" class="cardContent">
                     <div><img src="pics/3.png" class="img" alt="img"></div>
@@ -88,7 +94,7 @@
                   </div>
                 </div>
                                 <!-- Snow Leopard -->
-                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                   <div><img src="pics/cardframe.png"></div>
                   <a href="#"><div id="sleopard" class="cardContent">
                     <div><img src="pics/4.png" class="img" alt="img"></div>
@@ -99,7 +105,7 @@
                   </div>
                 </div>
                                 <!-- Clouded Leopard -->
-                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                   <div><img src="pics/cardframe.png"></div>
                   <a href="#"><div id="cleopard" class="cardContent">
                     <div><img src="pics/5.png" class="img" alt="img"></div>
@@ -110,7 +116,7 @@
                   </div>
                 </div>
                                 <!-- scleopard -->
-                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                   <div><img src="pics/cardframe.png"></div>
                   <a href="#"><div id="scleopard" class="cardContent">
                     <div><img src="pics/6.png" class="img" alt="img"></div>
@@ -121,7 +127,7 @@
                   </div>
                 </div>
                                 <!-- Iberian Lynx -->
-                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                   <div><img src="pics/cardframe.png"></div>
                   <a href="#"><div id="lynx" class="cardContent">
                     <div><img src="pics/7.png" class="img" alt="img"></div>
@@ -132,7 +138,7 @@
                   </div>
                 </div>
                                 <!-- Fishing Cat -->
-                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                   <div><img src="pics/cardframe.png"></div>
                   <a href="#"><div id="fishingcat" class="cardContent">
                     <div><img src="pics/8.png" class="img" alt="img"></div>
@@ -143,7 +149,7 @@
                   </div>
                 </div>
                                 <!-- Flat-headed Cat -->
-                <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                   <div><img src="pics/cardframe.png"></div>
                   <a href="#"><div id="flatheadcat" class="cardContent">
                     <div><img src="pics/9.png" class="img" alt="img"></div>
@@ -154,23 +160,24 @@
                   </div>
                 </div>
 
-                 <div class="col-xs-6 cardBoarder ih-item square effect6 from_top_and_bottom">
+                <!--  <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                       <div><img src="pics/cardframe.png" style="opacity: 0;"></div>
-                </div>
+                </div> -->
               </div><!-- cards end -->
-
-              <h3 class="text-center" id="scoreNum">0/9</h3>       
+             
+              <p class="text-center" id="scoreNum" style="padding:10px">0/9</p>
             
-            </div><!-- tab panel1 ends -->
+            
+            </div><!-- tab panel2 ends -->
 
           <!-- share bottons-->
           </div>
-            <div class="col-md-12">          
+            <div class="col-xs-12">          
                 <ul class="sharing-buttons">
-                  <li>
+                  <li >
                     <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2f104.236.239.239%3a3000%2fhelpbigcatspurr%2f" target="_blank"><i class="fa fa-facebook-square"></i>Share on Facebook </a>
                   </li>
-                  <li>
+                  <li >
                     <a class="twitter" href="https://twitter.com/intent/tweet?url=http%3a%2f%2f104.236.239.239%3a3000%2fhelpbigcatspurr%2f&text=How many rare species can you collect! &via=helpbigcatspurr" target="_blank"><i class="fa fa-twitter-square"></i>Tweet </a>
                   </li>
                   <li>

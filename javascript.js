@@ -1,5 +1,12 @@
     //*************************** Youtube Initial *****************************//
       // 2. This code loads the IFrame Player API code asynchronously.
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+$('#test').tooltip()
+
+
       var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
@@ -23,7 +30,7 @@
             autoplay:1,
             loop:1,
             index:randomnumber,
-            // showinfo:0,
+            showinfo:0,
             rel: 0,
             modestbranding:1, 
                     // suggestedQuality:'hd720'
@@ -113,15 +120,15 @@
     //*************************** OUTPUT of video info ***************************
       var bigcat={ 
 
-        XfIl1EibKaM: ['1', 'Tiger','<3,000','tiger'],
-        EDg_yHKrRcA: ['2', 'African Lion ↓','<32,000','lion'],
-        qqH6V4cfUaY: ['3', 'Cheetah','9,000~12,000','cheetah'],
-        EjxvrHDaxKc: ['4', 'Snow Leopard','4,080~6,590','sleopard'],
-        ot8q0OUnUwI: ['5', 'Clouded Leopard','<10,000','cleopard'],
-        ZiLyDbjEkgw: ['6', 'Sunda Clouded Ledopard','<10,000','scleopard'],
-        rv436cpA8vE: ['7', 'Iberian Lynx','84~143','lynx'],
-        IjoycRq3r0c: ['8', 'Fishing Cat','<10,000','fishingcat'],
-        H4Tt796djv4: ['9', 'Flat-headed Cat','<2,500','flatheadcat']
+        XfIl1EibKaM: ['1', 'Tiger','<3,000','tiger','Endangered'],
+        EDg_yHKrRcA: ['2', 'African Lion ','<32,000','lion','Vulnerable'],
+        qqH6V4cfUaY: ['3', 'Cheetah','9,000~12,000','cheetah','Vulnerable'],
+        EjxvrHDaxKc: ['4', 'Snow Leopard','4,080~6,590','sleopard','Endangered'],
+        ot8q0OUnUwI: ['5', 'Clouded Leopard','<10,000','cleopard','Vulnerable'],
+        ZiLyDbjEkgw: ['6', 'Sunda Clouded Ledopard','<10,000','scleopard','Vulnerable'],
+        rv436cpA8vE: ['7', 'Iberian Lynx','84~143','lynx','Critically Endangered'],
+        IjoycRq3r0c: ['8', 'Fishing Cat','<10,000','fishingcat','Endangered'],
+        H4Tt796djv4: ['9', 'Flat-headed Cat','<2,500','flatheadcat','Endangered']
       }
 
       var score=[];
@@ -139,28 +146,32 @@
             var catName = card[1];
             var population = card[2];
             var catId = card[3];
+            var rating = card[4];
             // console.log(imgNum);
 
             //append to first tab
-            $('#count').prepend('<p class="notice">********** Found Rare Cat Species! *********</p></br>');
-            $('#count').prepend('<p class="bigCatName">' + catName +'</br> Estimate Population: '+population+'</p>');        
-            $('#count').prepend('<div class="cardgraph"><img class="img-responsive" src="pics/' + imgNum + '.png"></div>');
-            $('#count').prepend('<p class="notice">********** Found Rare Cat Species! *********</p>');
-            //append to second tab
+            // $('#count').prepend('<p class="notice">***********************************************</p></br>');
+            $('#count').prepend('<p class="bigCatInfo">Estimated Population: <span class="bigCatBold">'+population+'</span></p></br>');
+            // $('#count').prepend('<p class="bigCatInfo">' + rating +'</p>');  
+            $('#count').prepend('<p class="bigCatBold">' + catName +'</p>');        
+            // $('#count').prepend('<div class="cardgraph"><img class="img-responsive" src="pics/' + imgNum + '.png"></div>');
+            $('#count').prepend('<p class="notice">***   Found Rare Cat Species!   ***</p></br>');
+            
+            //show in second tab
             document.getElementById(catId).style.display="block";
 
             //counter
             if (jQuery.inArray(videoId, score) == -1) {
               score.push(videoId); 
-              document.getElementById("scoreNum").innerHTML = score.length + "/9";       
-            } else{alert("in")};
+              document.getElementById("scoreNum").innerHTML = score.length + "/9)";       
+            };
 
           }
           else {
             var views = Number(info.view).toLocaleString()
-            console.log(views);
-            $('#count').prepend($('<p>'+'View Count:  '+'<b class="viewCount">'+views+'</b>'+'</p>'+ '</br>').fadeIn('slow'));
-            $('#count').prepend('<p>'+'Name: '+info.title+'</p>');
+            // console.log(views);
+            $('#count').prepend($('<p>'+'<b class="viewCount">'+views+'  views</b>'+'</p>'+ '</br>').fadeIn('slow'));
+            $('#count').prepend('<p>Video: '+info.title+'</p>');
             return info;
           };
       }

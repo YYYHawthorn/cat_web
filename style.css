@@ -3,11 +3,14 @@ html, body {
     width:100%;
     padding: 10px;
     background-color:#B8E986;
+    font-family: 'Open Sans', sans-serif;
 }
+ @font-face { font-family: Delicious; src: url('Delicious-Roman.otf'); } 
+ @font-face { font-family: Delicious; font-weight: bold; src: url('Delicious-Bold.otf');}
 /********* Home Page **********/
-a{
-	color:#FFF6F6;
-}
+/*a{
+	color:#888888;
+}*/
 /*LEFT*/
 .gridBlock{
 	position: relative;
@@ -33,41 +36,64 @@ a{
   z-index:3;
 }
 
-/*RIGHT*/
-.title{
-	/* HELP BIG CATS PURR: */
+/***********RIGHT**********/
+/*.title{
+	HELP BIG CATS PURR: 
 	font-family: AvenirNext-Bold;
 	font-size: 46px;
 	color: #323232;
 	line-height: 79px;
 	position: relative;
 	top: 10px;
+}*/
+.subTitile{
+  font-size: 16px;
+  font-style: italic;
+  color: rgb(108, 108, 108);
+  padding: 10px;
 }
 
-#tab1{
-	background-color: #8BC451;
-	border:  2px solid #6B6B6B 0.3;
-	border-radius: 10px 10px 0 0;
-	border-bottom-color: transparent;
-	margin-bottom: -2px;
+/* Tab Navigation */
+.nav-tabs {
+    padding: 0;
+    font-weight: bold;   
 }
+.nav-tabs > li{
+	margin-bottom: -4px;
+}
+.nav-tabs > li > a {
+    background: #DADADA;
+    border-radius: 10px 10px 0 0;
+    box-shadow: inset 0 -8px 7px -15px rgba(0,0,0,.4),-2px -2px 5px -2px rgba(0,0,0,.4);
+}
+.nav-tabs > li.active > a,
+ {
+    background: #F5F5F5;
+    box-shadow: inset 0 0 0 0 rgba(0,0,0,.4), 2px -3px 5px -2px rgba(0,0,0,.4);
+    border:0;
+}
+
+/* Tab Content */
+.tab-pane {
+    background: rgba(253, 253, 253, 0.4);
+    /*background: #F5F5F5;*/
+    box-shadow: 2px 0 4px rgba(0,0,0,.4);
+    border-radius: 0;
+    text-align: center;
+    padding: 10px;
+    border-radius: 0 10px 10px 10px;
+
+}
+
 #tab2{
-	background-color: #4A90E2;
-	border:  2px solid #6B6B6B 0.3;
-	border-radius: 10px 10px 0 0;
-	border-bottom-color: transparent;
-	margin-bottom: -2px;
-	color:; 
+	background-color: rgba(95, 161, 206, 1);
 }
+
 .tabContent1{
-	opacity: 0.6;
-	background: #8BC451;
-	border:  2px solid #6B6B6B 0.3;
+	border: solid white 3px;   
 }
 .tabContent2{
-	opacity: 0.6;
-	background: #4A90E2;
-	border:  2px solid #6B6B6B 0.3;
+	background: rgba(95, 161, 206, 1);
 }
 
 /*scroll bar*/
@@ -82,24 +108,38 @@ a{
 }
 /* small cat videos counts*/
 #count{
-	font-size: 14px;
-	color: #4A4A4A;
-/*	padding: 10px;*/
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+    color: #ff3d00;
+	/*background: rgba(128, 128, 128, 0.2);*/
+  	/*border: solid 10px transparent;*/
 }
 .viewCount{
-	font-size: 26px;
-	/*color: #e74c3c;*/
+	font-size: 30px;
 }
 
 /* big cats videos notice*/
 .notice{
-	/* rare spicies notice */
 	font-size: 16px;
-	color: blue;
+	color: #1562BB;
 }
-.bigCatName{
-	font-size: 26px;
-	color: blue;
+.bigCatBold{
+	font-size: 30px;
+	font-weight: 700;
+	color: #1562BB;
+}
+.bigCatInfo{
+	/*font-size: 20px;*/
+	/*font-weight: 400;*/
+	color: #1562BB;
+}
+
+
+.panel2title{
+	font-weight:bold; 
+	font-size: 18px; 
+	display: inline;
+	padding:10px;
 }
 .cardBoarder{
 	padding: 5px;
@@ -131,14 +171,14 @@ a{
   text-decoration: none;
   text-align: center;
   padding:0;
-  padding-top: 20px;
+  padding: 20px;
 }
 
 .sharing-buttons li{
   display: inline;
   box-sizing: border-box;
-  font-family: sans-serif;
   padding: 10px;
+  font-size: 1vw;
 }
 
 .sharing-buttons a{
@@ -170,52 +210,3 @@ a{
 .google-plus{
   background: #D14836
 }
-
-
-
-/********* RESULTS **********/
-
-/********* SOLUTION PAGE **********/
-/*#Boma{
-	position: absolute;
-	left: 326px;
-	top: -5px ;
-}
-
-#African{
-	position: absolute;
-	left: 800px;
-	top: 160px ;
-}
-#Tiger{
-	position: absolute;
-	left: 0;
-	top: 450px ;
-}
-#tigerContent{
-	z-index: 2;
-	position: relative;
-	left: -280px;
-	top: -220px;
-}
-#Flashlight
-{
-	position: absolute;
-	left: -18px;
-	top: 130px ;
-}
-#tigerContent{
-	z-index: 2;
-	position: relative;
-	left: -100px;
-	top: -130px;
-}
-#House{	position: absolute;
-	left: 1190px;
-	top: -11px ;
-}
-#Cat{
-	position: absolute;
-	left: 1166.3px;
-	top: 0 ;
-}*/
