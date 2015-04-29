@@ -26,8 +26,7 @@
         <div class="gridBlock">
           <div id="catbody"><img src="pics/body.png" class="img-responsive center-block" alt="Responsive image"  ></div>
           <a href="#"><img src="pics/pawglow.png"  id="playNext" class="img-responsive" alt="Responsive image" onmouseover="this.src='pics/pawglow.png';" onmouseout="this.src='pics/paw.gif';"></a>
-
-<!-- onclick="getElementById('demo').style.src="pics/paw.gif""  -->
+          <a href="#"><img src="pics/donate.png"  id="donate" class="img-responsive" alt="Responsive image" onclick="involved()"></a>
 
           <div  class="embed-responsive center-block embed-responsive-4by3 playerdiv">
             <div id="player"></div>
@@ -39,11 +38,11 @@
     <div class="col-md-5">
         <!-- <p class="title">HELP BIG CATS PURR</p> -->
         <div><img src="pics/title.png" class="img-responsive center-block"></div>
-        <p class="subTitile">This is a digital cat video kiosk. </br>Keep watching, you may find rare cat species!</p>
+        <p class="subTitile">Keep watching, you may find rare cat species!</p>
         
       <!-- tab -->
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">INFOMATION STREAM</a></li>
+        <ul class="nav nav-tabs  nav-justified" style="font-size:1.3vw" role="tablist">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">INFORMATION STREAM</a></li>
           <li role="presentation" ><a href="#profile" id="tab2" aria-controls="profile" role="tab" data-toggle="tab">BIG CATS COLLECTION</a></li>
         </ul>
         
@@ -57,8 +56,10 @@
             <div role="tabpanel" class="tab-pane fade tabContent2 content" id="profile">
               
               <div>
-              <p class="panel2title">Big cats you met will be display here </p>
-              <p id="scoreNum" class="panel2title">0/9</p>
+              <div class="center-block" style="padding:10px">
+                <p class="panel2title">Big cats you viewed will be displayed here </p>
+                <p class="panel2title" id="scoreNum">(0/9)</p>
+              </div>
               <!-- cards -->
                 <!-- tiger -->
                 <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
@@ -159,13 +160,15 @@
                     </div></a>
                   </div>
                 </div>
-
+                <p class="notice">.</p>
                 <!--  <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
                       <div><img src="pics/cardframe.png" style="opacity: 0;"></div>
                 </div> -->
               </div><!-- cards end -->
-             
-              <p class="text-center" id="scoreNum" style="padding:10px">0/9</p>
+              
+              
+              
+              
             
             
             </div><!-- tab panel2 ends -->

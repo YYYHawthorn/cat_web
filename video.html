@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head >
+  <title>HelpBigCatsPurr</title>
+  <meta charset=utf-8 />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+  <!-- javascript order: JQuery, Bootstrap, my js -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.3/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reqwest/1.1.5/reqwest.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="javascript.js"></script>
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+  <link href="css/ihover.css" rel="stylesheet">
+  <link href="css/jquery-ui.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="style.css"/>  
+  <!-- font -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "5c0a9d17-1ec0-4b11-9910-da49c33305e3", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+  <!-- page LEFT part -->  
+      <div class="col-md-7" id="leftColumn">
+        <div class="gridBlock">
+          <div id="catbody"><img src="pics/body.png" class="img-responsive center-block" ></div>
+
+          <a href="#"><img src="pics/pawglow.png"  id="playNext" class="img-responsive" alt="click to toggle" onmouseover="this.src='pics/pawglow.png';" onmouseout="this.src='pics/paw.gif';"></a>
+          
+          <img src="pics/donate.png"  id="donate" class="img-responsive">
+          <a href='#' onclick="involved()"><img src="pics/sign.png" class="sign img-responsive"></a>
+
+
+          <div  class="embed-responsive center-block embed-responsive-4by3 playerdiv">
+          	<div id="player"></div>
+          </div>
+        </div>
+      </div> <!-- left col ends -->
+   
+ <!-- page RIGHT part -->
+    <div class="col-md-5">
+        <div style="margin-bottom: 20px"><img src="pics/title.png" class="img-responsive center-block"></div>
+
+        <div id="panelA" class="shadow">
+        	<div class="wrap content" id="panelAbove">
+        	 	<div id="count" class="text-center"></div>
+       		</div>
+        </div>
+
+        <div><img src="pics/ring.png" class="img-responsive center-block ring"></div>
+
+        <div class="content shadow" id="panelBelow">
+        <!-- cards -->
+                <!-- tiger -->
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="tiger" class="cardContent">
+                    <div><img src="pics/1.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>ENDANGERED</h3>
+                      <p>Less than 3000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                <!-- lion -->
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="lion" class="cardContent">
+                    <div><img src="pics/2.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>VULNERABLE</h3>
+                      <p>Less than 32000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                <!-- cheetah -->
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="cheetah" class="cardContent">
+                    <div><img src="pics/3.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>VULNERABLE</h3>
+                      <p>9000~12000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- Snow Leopard -->
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="sleopard" class="cardContent">
+                    <div><img src="pics/4.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>ENDANGERED</h3>
+                      <p>4086~6590</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- Clouded Leopard -->
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="cleopard" class="cardContent">
+                    <div><img src="pics/5.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>VULNERABLE</h3>
+                      <p>Less than 10000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- scleopard -->
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="scleopard" class="cardContent">
+                    <div><img src="pics/6.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>VULNERABLE</h3>
+                      <p>Less than 10000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- Iberian Lynx -->
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="lynx" class="cardContent">
+                    <div><img src="pics/7.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>CRITICALLY ENDANGERED</h3>
+                      <p>84~143</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- Fishing Cat -->
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="fishingcat" class="cardContent">
+                    <div><img src="pics/8.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>ENDANGERED</h3>
+                      <p>Less than 10000</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                                <!-- Flat-headed Cat -->
+                <div class="col-xs-4 cardBoarder ih-item square effect6 from_top_and_bottom">
+                  <div><img src="pics/cardframe.png"></div>
+                  <a href="#"><div id="flatheadcat" class="cardContent">
+                    <div><img src="pics/9.png" class="img" alt="img"></div>
+                    <div class="info">
+                      <h3>ENDANGERED</h3>
+                      <p>Less than 2500</br>Still Decreasing</p>
+                    </div></a>
+                  </div>
+                </div>
+                <p class="counterTitle text-center" id="scoreNum">(0/9)</p>
+
+        </div>
+
+<div class="share text-right">
+  <span class='st_fblike_large' displayText='Facebook Like'></span>
+<span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_pinterest_large' displayText='Pinterest'></span>
+<span class='st_email_large' displayText='Email'></span>
+</div>
+
+    </div> <!-- right col ends -->
+
+
+    </div><!-- row ends -->
+  </div> <!-- container ends -->
+
+
+
+
+  </body>
+
+
+  </html>

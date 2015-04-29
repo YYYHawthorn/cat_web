@@ -1,10 +1,6 @@
+
     //*************************** Youtube Initial *****************************//
       // 2. This code loads the IFrame Player API code asynchronously.
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-
-$('#test').tooltip()
 
 
       var tag = document.createElement('script');
@@ -30,7 +26,7 @@ $('#test').tooltip()
             autoplay:1,
             loop:1,
             index:randomnumber,
-            showinfo:0,
+            showinfo:1,
             rel: 0,
             modestbranding:1, 
                     // suggestedQuality:'hd720'
@@ -149,29 +145,35 @@ $('#test').tooltip()
             var rating = card[4];
             // console.log(imgNum);
 
-            //append to first tab
-            // $('#count').prepend('<p class="notice">***********************************************</p></br>');
-            $('#count').prepend('<p class="bigCatInfo">Estimated Population: <span class="bigCatBold">'+population+'</span></p></br>');
-            // $('#count').prepend('<p class="bigCatInfo">' + rating +'</p>');  
-            $('#count').prepend('<p class="bigCatBold">' + catName +'</p>');        
-            // $('#count').prepend('<div class="cardgraph"><img class="img-responsive" src="pics/' + imgNum + '.png"></div>');
-            $('#count').prepend('<p class="notice">***   Found Rare Cat Species!   ***</p></br>');
-            
-            //show in second tab
-            document.getElementById(catId).style.display="block";
+            //information stream
+            $('#count').prepend('<p class="notice"><b>' + catName +'</b> you are watching has</br> <span class="bigCatBold"> only '+population+' left</span></p></br>');
+            $('#count').prepend('<p class="notice">***  Found Rare Cat Species!!!  ***</p>');
 
-            //counter
-            if (jQuery.inArray(videoId, score) == -1) {
+            // document.getElementById("panelAbove").style.borderColor="blue";
+      		 
+      		$( document ).ready(function() {
+			  $( "#panelAbove" ).effect( "shake");
+			});
+      		
+            
+            //card
+            document.getElementById(catId).style.display = "block";
+            //counter, avoid repeating
+            if (jQuery.inArray(videoId, score) == -1 && score.length <=9 ) {
               score.push(videoId); 
-              document.getElementById("scoreNum").innerHTML = score.length + "/9)";       
-            };
+              document.getElementById("scoreNum").innerHTML = "("+ score.length + "/9)";       
+            }
+            else{};
 
           }
           else {
+
+          	document.getElementById("panelAbove").style.borderColor="rgb(227, 231, 217)";
+
             var views = Number(info.view).toLocaleString()
             // console.log(views);
             $('#count').prepend($('<p>'+'<b class="viewCount">'+views+'  views</b>'+'</p>'+ '</br>').fadeIn('slow'));
-            $('#count').prepend('<p>Video: '+info.title+'</p>');
+            $('#count').prepend('<p>"'+info.title+'" you are watching has</p>');
             return info;
           };
       }
@@ -183,3 +185,10 @@ $('#test').tooltip()
         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+   function involved(){
+    window.open("http://animals.nationalgeographic.com/animals/big-cats-initiative/get-involved/");
+  }

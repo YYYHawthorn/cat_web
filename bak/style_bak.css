@@ -20,7 +20,7 @@ html, body {
 }
 .playerdiv{
   position: absolute;
-  top: 5%;
+  top: 18%;
   width: 100%;
   z-index:2;
 }
@@ -34,6 +34,13 @@ html, body {
   right: -6%;
   width: 26%;
   z-index:3;
+}
+#donate{
+  position: absolute;
+  top: 47%;
+  left:27%;
+  width: 50%;
+  z-index: 4;
 }
 
 /***********RIGHT**********/
@@ -139,7 +146,6 @@ html, body {
 	font-weight:bold; 
 	font-size: 18px; 
 	display: inline;
-	padding:10px;
 }
 .cardBoarder{
 	padding: 5px;
