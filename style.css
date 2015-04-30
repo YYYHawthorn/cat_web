@@ -180,9 +180,9 @@ img.sign:hover{
 }
 
 .counterTitle{
-	font-weight:bold; 
-	font-size: 18px;
-  padding-top: 10px; 
+	font-size: 16px;
+  /*padding-top: 10px;*/
+  opacity: 0;
 }
 
 #gift{
