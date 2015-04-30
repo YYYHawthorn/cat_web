@@ -11,15 +11,15 @@
 
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
-      var player;
+      
       //randomize playlist
-      var randomnumber = Math.floor(Math.random() * 11) ;
+      var randomnumber = Math.floor(Math.random() * 2) + 3 ;
+
+      var player;
 
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player'
           , {
-            // height: '300px',
-            // width: '400px',
             playerVars:{listType: 'playlist',
             list:'PLW1bZqF7FVSN31ILibwTRdYinMq4mx8Vp',
             controls:1,
@@ -47,6 +47,7 @@
         var playNextBtn = document.getElementById('playNext'); 
         playNextBtn.onclick= function(){
          player.nextVideo();
+         document.getElementById('mask').style.display = "none";
        }
      }
 
@@ -161,7 +162,8 @@
             //counter, avoid repeating
             if (jQuery.inArray(videoId, score) == -1 && score.length <=9 ) {
               score.push(videoId); 
-              document.getElementById("scoreNum").innerHTML = "("+ score.length + "/9)";       
+              document.getElementById("scoreNum").innerHTML = "("+ score.length + "/9)"; 
+                if (score.length == 3) {document.getElementById("gift").style.display="block";} else{};      
             }
             else{};
 
@@ -190,5 +192,5 @@
 
 
    function involved(){
-    window.open("http://animals.nationalgeographic.com/animals/big-cats-initiative/get-involved/");
+    window.open("http://animals.nationalgeographic.com/animals/big-cats-initiative/");
   }

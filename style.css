@@ -1,0 +1,208 @@
+html, body {
+    height:100%;
+    width:100%;
+    padding: 10px;
+    background-color:#B3E345;
+    font-family: 'Open Sans', sans-serif;
+}
+ @font-face { font-family: Delicious; src: url('Delicious-Roman.otf'); } 
+ @font-face { font-family: Delicious; font-weight: bold; src: url('Delicious-Bold.otf');}
+
+
+
+/********* Home Page **********/
+.shadow {
+  -moz-box-shadow:    2px 3px 2px 2px rgba(0, 0, 0, 0.32);
+  -webkit-box-shadow: 2px 3px 2px 2px rgba(0, 0, 0, 0.32);
+  box-shadow:         2px 3px 2px 2px rgba(0, 0, 0, 0.32);
+}
+/*LEFT*/
+#leftColumn{
+	padding: 0 10px 0 0;
+	max-width: 740px;
+}
+
+.gridBlock{
+	position: relative;
+}
+
+#catbody{
+	width: 100%;
+  	z-index:-1;
+}
+.playerdiv{
+  position: absolute;
+  top: 14%;
+  width: 100%;
+  z-index:2;
+}
+#player {
+	padding: 19%;
+	padding-top: 17%;
+}
+
+#playNext {
+  position: absolute;
+  width: 22%;
+  top:19%;
+  right: -2%;
+  z-index:3;
+
+}
+
+#donate{
+  position: absolute;
+    width: 60%;
+  top: 61%;
+  left:22%;
+  z-index: 4;
+}
+
+img.sign{
+  position: absolute;
+  width: 34%;
+  top: 58%;
+  left:36%;
+  z-index: 3;
+}
+
+img.sign:hover{
+  position: absolute;
+  top: 54%;
+  left:36%;
+  z-index: 3;
+}
+
+/***********RIGHT**********/
+
+
+.subTitile{
+  font-size: 16px;
+  font-style: italic;
+  color: rgb(108, 108, 108);
+  padding: 10px 0 10px 0;
+}
+
+
+/*scroll bar*/
+.wrap { 
+    overflow-y:auto;
+    height: 140px;
+}
+/*content style*/
+.content{   
+    padding:15px 10px 15px 10px;
+    border-radius: 5px;
+    min-height:100%; 
+}
+
+#panelA{
+    background-color:rgba(255, 255, 255, 0.95);
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    border: solid 3px white;
+}
+
+#panelAbove{
+	background-color:rgba(141, 141, 141, 0.2);
+}
+
+.ring{
+  width: 80%;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  /*z-index: 5;*/
+}
+
+#mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(65, 65, 65, 0.95);
+  border: dashed 2px yellow;
+  display: block;
+  border-radius: 5px;
+  z-index: 4;
+
+}
+
+#mask p{
+  color: yellow; 
+  padding: 30px;
+  font-size: 1.5em;
+  line-height: 150%;
+}
+
+#panelBelow{
+	background-color: rgba(66, 137, 206, 0.95);
+  position: relative;
+  border-radius: 5px;
+  /*z-index: 3;*/
+}
+
+/* small cat videos counts*/
+#count{
+	font-size: 16px;
+    color: #ff3d00;
+}
+.viewCount{
+	font-size: 3em;
+}
+
+/* big cats videos notice*/
+.notice{
+	font-size: 16px;
+	color: #1562BB;
+	font-weight: 400;
+}
+.bigCatBold{
+	font-size: 3em;
+	font-weight: 700;
+	color: #1562BB;
+}
+
+/*.list-inline li{
+	width: 10%;
+}
+#infoDis{display: none;}
+*/
+
+.cardBoarder{
+	padding: 10px;
+}
+.cardContent{
+	position: absolute; 
+	top: 0;
+  	left: 0;
+  	padding: 5px;
+	z-index: 2;
+}
+
+.counterTitle{
+	font-weight:bold; 
+	font-size: 18px;
+  padding-top: 10px; 
+}
+
+#gift{
+  display:none;
+}
+
+
+
+#tiger{display: none;}
+#lion{display: none;}
+#cheetah{display: none;}
+#sleopard{display: none;}
+#cleopard{display: none;}
+#scleopard{display: none;}
+#lynx{display: none;}
+#fishingcat{display: none;}
+#flatheadcat{display: none;}
+
+
+/* share */
+.share{
+  padding: 20px;
+}
