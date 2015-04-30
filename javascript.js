@@ -1,29 +1,5 @@
 
     //*************************** Youtube Initial *****************************//
-
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      
-      var randomnumber = Math.floor(Math.random() * 2) + 3 ;
-
-
-
-      $("#playerdiv.click-to-play-video").click(function(){
-        player = new YT.Player('player'
-          , {
-            width : '320',
-            height : '180',
-            videoId : 'qlEUrEVqDbo',
-            playerVars: { 'autoplay': 1 },
-            
-            events: {
-              'onReady': onPlayerReady,
-              'onStateChange': onPlayerStateChange
-            }
-                });        
-      });
-
       // 2. This code loads the IFrame Player API code asynchronously.
 
 
@@ -32,12 +8,40 @@
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
       
+      //randomize playlist
+      var randomnumber = Math.floor(Math.random() * 2) + 3 ;
+
       var player;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player'
+          , {
+            playerVars:{listType: 'playlist',
+            list:'PLW1bZqF7FVSN31ILibwTRdYinMq4mx8Vp',
+            controls:1,
+            autoplay:1,
+            loop:1,
+            index:randomnumber,
+            showinfo:1,
+            rel: 0,
+            modestbranding:1, 
+                    // suggestedQuality:'hd720'
+                  },
+                  events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                  }
+                });        
+      }
+
 
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
-        // event.target.playVideo();
+        event.target.playVideo();
         saveVideoInfo();
 
         var playNextBtn = document.getElementById('playNext'); 
