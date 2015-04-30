@@ -30,11 +30,17 @@ html, body {
 	width: 100%;
   	z-index:-1;
 }
-.playerdiv{
-  position: absolute;
-  top: 14%;
+
+#head{
   width: 100%;
-  z-index:2;
+}
+#playerdiv{
+ cursor:pointer;
+        width:320px;
+        height:180px;
+
+        margin:auto;
+        position:relative;
 }
 #player {
 	padding: 19%;
