@@ -13,7 +13,7 @@
       //    after the API code downloads.
       
       //randomize playlist
-      var randomnumber = Math.floor(Math.random() * 2) + 3 ;
+      var randomnumber = Math.floor(Math.random() * 26) ;
 
       var player;
 
@@ -26,10 +26,10 @@
             autoplay:1,
             loop:1,
             index:randomnumber,
-            showinfo:1,
+            showinfo:0,
             rel: 0,
             modestbranding:1, 
-                    // suggestedQuality:'hd720'
+                  
                   },
                   events: {
                     'onReady': onPlayerReady,
@@ -128,6 +128,19 @@
         H4Tt796djv4: ['9', 'Flat-headed Cat','<2,500','flatheadcat','Endangered']
       }
 
+      var bigcatR=[
+        "wHN7vJW8t5o",
+        "MUSF6tbj_QQ",
+        "J11uu8L8FTY",
+        "_OPA1bZwOWc",
+        "agVnhrFD3ww",
+        "xcJ0oGFsc7M",
+        "lNMsldOk7Ms",
+        "pHZm52nvBB4",
+        "drq_ww7Ytzw",
+        "zztFiijm34s"
+      ];
+
       var score=[];
       
       function loadVideoInfo(){
@@ -168,9 +181,11 @@
             else{};
 
           }
+          else if(jQuery.inArray(videoId, bigcatR) > -1){   
+            $('#count').prepend('<p class="bigCatBoldR">No matter what, </br>a cat is a cat...</p></br>');
+            // $('#count').prepend('<p class="notice">'+info.title+'</p>');
+          }
           else {
-
-          	document.getElementById("panelAbove").style.borderColor="rgb(227, 231, 217)";
 
             var views = Number(info.view).toLocaleString()
             // console.log(views);
