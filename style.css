@@ -32,20 +32,20 @@ html, body {
 }
 .playerdiv{
   position: absolute;
-  top: 29%;
+  top: 14%;
   width: 100%;
   z-index:2;
 }
 #player {
-	padding: 12%;
-	padding-top: 16%;
+	padding: 19%;
+	padding-top: 17%;
 }
 
 #playNext {
   position: absolute;
-  width: 11%;
-  top:32%;
-  right: 9%;
+  width: 22%;
+  top:19%;
+  right: -2%;
   z-index:3;
 
 }
@@ -76,7 +76,7 @@ img.sign:hover{
 /***********RIGHT**********/
 
 
-.subTitle{
+.subTitile{
   font-size: 16px;
   font-style: italic;
   color: rgb(108, 108, 108);
@@ -108,11 +108,10 @@ img.sign:hover{
 }
 
 .ring{
-  position: relative;
   width: 80%;
   margin-top: -10px;
   margin-bottom: -10px;
-  z-index: 5;
+  /*z-index: 5;*/
 }
 
 #mask{
@@ -130,16 +129,16 @@ img.sign:hover{
 
 #mask p{
   color: yellow; 
-  padding: 16px;
-  font-size: 1.4em;
-  line-height: 200%;
+  padding: 30px;
+  font-size: 1.5em;
+  line-height: 150%;
 }
 
 #panelBelow{
 	background-color: rgba(66, 137, 206, 0.95);
   position: relative;
   border-radius: 5px;
-  z-index: 3;
+  /*z-index: 3;*/
 }
 
 /* small cat videos counts*/
@@ -161,11 +160,6 @@ img.sign:hover{
 	font-size: 3em;
 	font-weight: 700;
 	color: #1562BB;
-}
-.bigCatBoldR{
-  font-size: 2.5em;
-  font-weight: 700;
-  color: #1562BB;
 }
 
 /*.list-inline li{
@@ -193,19 +187,8 @@ img.sign:hover{
 
 #gift{
   display:none;
-  position: absolute;
-  width: 34%;
-  top: 50%;
-  left:36%;
-  z-index: 3;
 }
 
-#gift:hover{
-  position: absolute;
-  top: 46%;
-  left:36%;
-  z-index: 3;
-}
 
 
 #tiger{display: none;}
