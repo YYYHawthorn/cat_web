@@ -32,22 +32,21 @@ html, body {
 }
 .playerdiv{
   position: absolute;
-  top: 29%;
+  top: 13%;
   width: 100%;
   z-index:2;
 }
 #player {
-	padding: 12%;
+	padding: 19%;
 	padding-top: 16%;
 }
 
 #playNext {
   position: absolute;
-  width: 11%;
-  top:32%;
-  right: 9%;
-  z-index:3;
-
+  width: 22%;
+  top: 17%;
+  right: -3%;
+  z-index: 3;
 }
 
 #donate{
@@ -91,7 +90,7 @@ img.sign:hover{
 }
 /*content style*/
 .content{   
-    padding:15px 10px 15px 10px;
+    padding:10px;
     border-radius: 5px;
     min-height:100%; 
 }
@@ -195,16 +194,22 @@ img.sign:hover{
   display:none;
   position: absolute;
   width: 34%;
-  top: 50%;
+  top: 57%;
   left:36%;
   z-index: 3;
 }
 
 #gift:hover{
   position: absolute;
-  top: 46%;
+  top: 52%;
   left:36%;
   z-index: 3;
+}
+
+.action{
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 6px 12px;
 }
 
 
