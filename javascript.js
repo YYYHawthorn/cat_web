@@ -175,7 +175,7 @@
             //counter, avoid repeating
             if (jQuery.inArray(videoId, score) == -1 && score.length <=9 ) {
               score.push(videoId); 
-              document.getElementById("scoreNum").innerHTML = "("+ score.length + "/9)"; 
+              // document.getElementById("scoreNum").innerHTML = "("+ score.length + "/9)"; 
                 if (score.length == 9) {document.getElementById("gift").style.display="block";} else{};      
             }
             else{};
